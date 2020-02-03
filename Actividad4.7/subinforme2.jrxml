@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subinforme1" pageWidth="270" pageHeight="841" columnWidth="270" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="47fff015-6b1f-4187-aaa8-e765b65a83b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="ID_TELEFONO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[000000000]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM "TELEFONOS" WHERE "TELEFONOS"."ID_TELEFONO" = $P{ID_TELEFONO}]]>
+	</queryString>
+	<field name="ID_TELEFONO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID_TELEFONO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TELEFONOS"/>
+	</field>
+	<field name="ID_CONTACTO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID_CONTACTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TELEFONOS"/>
+	</field>
+	<field name="TELEFONO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="TELEFONO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="TELEFONOS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="270" height="30" backcolor="#94BD5E" uuid="616c1c00-9ce1-4777-899b-e198c91a5c87"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="100" height="17" uuid="e7b9c598-45bc-48df-9833-33c16c9692c5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TELEFONO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

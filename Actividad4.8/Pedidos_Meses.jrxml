@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pedidos_Meses" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="69805da7-bddb-4654-942c-ece5ffaee424">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT COUNT(*) ORDERS, YEAR(ORDERDATE) ANNO, MONTH(ORDERDATE) MES FROM ORDERS GROUP BY YEAR(ORDERDATE), MONTH(ORDERDATE) ORDER BY YEAR(ORDERDATE), MONTH(ORDERDATE)]]>
+	</queryString>
+	<field name="ORDERS" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="ORDERS"/>
+	</field>
+	<field name="ANNO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ANNO"/>
+	</field>
+	<field name="MES" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="MES"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="230" splitType="Stretch">
+			<bar3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="110" y="30" width="342" height="200" uuid="b47d0289-db7e-497b-aced-b1b5e1adadfb"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{ANNO}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{MES}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ORDERS}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+			<staticText>
+				<reportElement x="110" y="0" width="342" height="30" forecolor="rgba(255, 4, 0, 0.7058824)" uuid="3d763698-0274-4599-813a-56d8019cae8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gráfico de PEDIDOS por Años y Mes]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

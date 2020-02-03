@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subinforme1" pageWidth="270" pageHeight="841" columnWidth="270" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="47fff015-6b1f-4187-aaa8-e765b65a83b8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="inch"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="ID_CONTACTO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM CORREOS WHERE ID_CONTACTO= $P{ID_CONTACTO}]]>
+	</queryString>
+	<field name="ID_CORREO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID_CORREO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CORREOS"/>
+	</field>
+	<field name="ID_CONTACTO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID_CONTACTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CORREOS"/>
+	</field>
+	<field name="CORREO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CORREO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="CORREOS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="270" height="30" backcolor="#EBDB8A" uuid="616c1c00-9ce1-4777-899b-e198c91a5c87"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIONES DE CORREO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="4" width="110" height="20" uuid="960c3d37-2308-4f6c-b431-c58bd9552c94"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{CORREO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
